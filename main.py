@@ -54,7 +54,7 @@ def eliminar(selecion_id):
 #actualizar -dentro de db en codigo y nombre 
 @app.route("/actualizar/<int:selecion_id>", methods=['POST'])
 def actualizar(selecion_id):
-    selecion = Invetory.query.filter_by(id=selecion_id)#.first()
+    selecion = Invetory.query.filter_by(id=selecion_id).first()
     selecion.nombre = request.form.get('new_nom_producto_txt')
     selecion.codigo = request.form.get('new_codigo_txt')
     db.session.commit()

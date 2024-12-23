@@ -75,7 +75,7 @@
                   <div class="col">
                     <a class="btn btn-primary" href="/eliminar/{{t.id}}" role="button"><i class="bi bi-trash3"> </i></a>
 
-                    <a role="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" data-variable="{{t.id}}"> <i class="bi bi-highlighter"> </i> </a>
+                    <a role="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{t.id}}" data-bs-whatever="@mdo" > <i class="bi bi-highlighter"> </i> </a>
                     <!-- <a class="btn btn-primary" href="/actualizar/{{t.id}}" role="button" ><i class="bi bi-highlighter"> </i></a> -->
                     
                     <a class="btn btn-primary" href="/mas/{{t.id}}" role="button"><i class="bi bi-caret-up-fill"></i> </a>
@@ -87,7 +87,7 @@
                   
 
                     
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="exampleModal{{t.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -98,11 +98,11 @@
                             <form action="/actualizar/{{t.id}}" method="post">
                               <div class="mb-3">
                                 <label for="codigo_modal" class="col-form-label">Codígo:</label>
-                                <input type="text" class="form-control" id="codigo_modal" name="new_codigo_txt" value="{{t.codigo}}">
+                                <input type="text" class="form-control" id="codigo_modal" name="new_codigo_txt" value="{{t.codigo}}" required>
                               </div>
                               <div class="mb-3">
                                 <label for="nombre_modal" class="col-form-label">Descripción Producto:</label>
-                                <input type="text" class="form-control" id="nombre_modal" name="new_nom_producto_txt" value="{{t.nombre}}">
+                                <input type="text" class="form-control" id="nombre_modal" name="new_nom_producto_txt" value="{{t.nombre}}" required>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
